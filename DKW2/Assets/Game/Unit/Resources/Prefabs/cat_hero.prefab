@@ -48,7 +48,7 @@ MonoBehaviour:
   isActive: 1
   tabID:
     x: 0
-    y: 0
+    y: 1
   priority: 0
   requireIdleEntity: 1
   targetFinderData:
@@ -114,7 +114,7 @@ MonoBehaviour:
   requireTarget: 1
   allowMultipleTerrainAttacks: 0
   terrainAttackActive: 0
-  reloadDuration: 3
+  reloadDuration: 1.3
   delayTriggerEnabled: 0
   attackIterationTriggered: 0
   cooldown:
@@ -123,7 +123,7 @@ MonoBehaviour:
       _min: 1
       _max: 2
   launcher:
-    useAttackObjects: 1
+    useAttackObjects: 0
     launchType: 1
     sources: []
     attackIterationLaunchEvent:
@@ -132,8 +132,10 @@ MonoBehaviour:
   damage:
     enabled: 1
     data:
-      unit: 10
-      building: 10
+      unitMin: 40
+      unitMax: 55
+      buildingMin: 30
+      buildingMax: 35
       custom: []
     areaAttackEnabled: 0
     areaAttackData: []
@@ -370,14 +372,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 1
-  maxHealth: 100
-  initialHealth: 100
+    y: 0
+  maxHealth: 400
+  initialHealth: 400
   canIncrease: 1
   canDecrease: 1
   hoverHealthBarData:
     enabled: 1
-    offset: {x: 0, y: -1, z: 0}
+    offset: {x: 0, y: 4, z: 0}
     size: {x: 1, y: 1, z: 1}
     parent: {fileID: 0}
   hoverHealthBarY: 4
@@ -392,7 +394,7 @@ MonoBehaviour:
         _min: 1
         _max: 2
   destroyObject: 1
-  destroyObjectDelay: 0
+  destroyObjectDelay: 5
   destroyAward: []
   destructionAudio:
     fetchType: 0
