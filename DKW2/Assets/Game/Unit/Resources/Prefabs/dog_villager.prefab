@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 316216747744195301}
   - component: {fileID: 7658448763575401107}
   - component: {fileID: 2894931300113737244}
+  - component: {fileID: 4911427312856707093}
   m_Layer: 0
   m_Name: unit_components
   m_TagString: Untagged
@@ -388,7 +389,7 @@ MonoBehaviour:
   progressOverrideController:
     fetchType: 0
     items: []
-  progressDuration: 1
+  progressDuration: 0.8
   progressMaxDistance: 1
   inProgressObject: {fileID: 0}
   sourceEffect:
@@ -398,6 +399,78 @@ MonoBehaviour:
   showProgressGizmo: 1
   collectableResources:
   - type: {fileID: 11400000, guid: a3e40a20a0b603d4793ed1985b005aed, type: 2}
+    orderAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    amount: 1
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: ef4ed51c5a0e131469d47e2cb999116c, type: 2}
+    enableObject: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+    progressAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    loopProgressAudio: 0
+  - type: {fileID: 11400000, guid: ec2e59c7598c86e48a36b5c600f2f313, type: 2}
+    orderAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    amount: 1
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: ef4ed51c5a0e131469d47e2cb999116c, type: 2}
+    enableObject: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+    progressAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    loopProgressAudio: 0
+  - type: {fileID: 11400000, guid: 8778529791b988549bd1465066f9a9bc, type: 2}
     orderAudio:
       fetchType: 0
       items: []
@@ -524,10 +597,337 @@ MonoBehaviour:
           _min: 0
           _max: 0
     loopProgressAudio: 0
-  totalMaxCapacity: 5
+  - type: {fileID: 11400000, guid: ec2e59c7598c86e48a36b5c600f2f313, type: 2}
+    orderAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    amount: 5
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: b143a856cabaa7d4aa502ef95cca8e0c, type: 2}
+    enableObject: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+    progressAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    loopProgressAudio: 0
+  - type: {fileID: 11400000, guid: 8778529791b988549bd1465066f9a9bc, type: 2}
+    orderAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    amount: 5
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: b143a856cabaa7d4aa502ef95cca8e0c, type: 2}
+    enableObject: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+    progressAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    loopProgressAudio: 0
+  totalMaxCapacity: 30
   dropOffOnTargetAvailable: 1
   showDropOffPosition: 1
   editorFoldout: 0
+--- !u!114 &4911427312856707093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5866497607023392853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1e885e8e7860a4f8cceb9aac61c68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: dog_villager_Builder_157
+  isActive: 1
+  tabID:
+    x: 1
+    y: 1
+  priority: 0
+  requireIdleEntity: 1
+  targetFinderData:
+    enabled: 0
+    reloadTime: 5
+    range: 10
+    idleOnly: 1
+    typePicker:
+      type: 0
+      options:
+        codes: []
+        categories: []
+      targetUnits: 1
+      targetBuildings: 1
+      targetResources: 1
+    center: {fileID: 0}
+  setTargetTaskUI: {fileID: 0}
+  orderAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValueRange:
+        _min: 1
+        _max: 2
+  showTargetGizmo: 1
+  progressEnabledAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValueRange:
+        _min: 1
+        _max: 2
+  progressOverrideController:
+    fetchType: 0
+    items:
+    - {fileID: 22100000, guid: ef4ed51c5a0e131469d47e2cb999116c, type: 2}
+  progressDuration: 1
+  progressMaxDistance: 1
+  inProgressObject: {fileID: 0}
+  sourceEffect:
+    input: {fileID: 0}
+  targetEffect:
+    input: {fileID: 0}
+  showProgressGizmo: 1
+  healthPerProgress: 5
+  timeMultiplier: 0.2
+  canConstruct: 1
+  constructionTargetPicker:
+    type: 0
+    options:
+      codes: []
+      categories: []
+    targetUnits: 1
+    targetBuildings: 1
+  canPlaceBuildings: 1
+  creationTasks:
+  - taskTitle: 'Place Building: House'
+    taskUI: {fileID: 11400000, guid: 9ba4ef3277e481c4b85c627203089dc3, type: 2}
+    allowedFactionTypes:
+      type: 0
+      options: []
+    requiredResources:
+    - type: {fileID: 11400000, guid: ec2e59c7598c86e48a36b5c600f2f313, type: 2}
+      value:
+        amount: 50
+        capacity: 0
+      nonConsumable: 0
+    - type: {fileID: 11400000, guid: a3e40a20a0b603d4793ed1985b005aed, type: 2}
+      value:
+        amount: 50
+        capacity: 0
+      nonConsumable: 0
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    prefabObject: {fileID: 7708895771794036253, guid: 763ab939493f03c46b113374e1a166f7, type: 3}
+  - taskTitle: 'Place Building: Barrack'
+    taskUI: {fileID: 11400000, guid: 46a396e4af1513042967f6b3bf7ee501, type: 2}
+    allowedFactionTypes:
+      type: 0
+      options: []
+    requiredResources:
+    - type: {fileID: 11400000, guid: ec2e59c7598c86e48a36b5c600f2f313, type: 2}
+      value:
+        amount: 200
+        capacity: 0
+      nonConsumable: 0
+    - type: {fileID: 11400000, guid: a3e40a20a0b603d4793ed1985b005aed, type: 2}
+      value:
+        amount: 200
+        capacity: 0
+      nonConsumable: 0
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    prefabObject: {fileID: 1757281130161208, guid: 60bc8234d51b0664ca320a55465554cf, type: 3}
+  - taskTitle: 'Place Building: Granary'
+    taskUI: {fileID: 11400000, guid: 29a7c7fa16b84984bbc29b98f187f050, type: 2}
+    allowedFactionTypes:
+      type: 0
+      options: []
+    requiredResources:
+    - type: {fileID: 11400000, guid: ec2e59c7598c86e48a36b5c600f2f313, type: 2}
+      value:
+        amount: 100
+        capacity: 0
+      nonConsumable: 0
+    - type: {fileID: 11400000, guid: a3e40a20a0b603d4793ed1985b005aed, type: 2}
+      value:
+        amount: 100
+        capacity: 0
+      nonConsumable: 0
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    prefabObject: {fileID: 1585572764893566, guid: 926d54fcb19f187488abed77ed850d00, type: 3}
+  - taskTitle: 'Place Building: Turret'
+    taskUI: {fileID: 11400000, guid: c5739a16299981d488a186b4233754fd, type: 2}
+    allowedFactionTypes:
+      type: 0
+      options: []
+    requiredResources:
+    - type: {fileID: 11400000, guid: ec2e59c7598c86e48a36b5c600f2f313, type: 2}
+      value:
+        amount: 100
+        capacity: 0
+      nonConsumable: 0
+    - type: {fileID: 11400000, guid: a3e40a20a0b603d4793ed1985b005aed, type: 2}
+      value:
+        amount: 100
+        capacity: 0
+      nonConsumable: 0
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    prefabObject: {fileID: 8242944553134752325, guid: 09e397eddace22c4c8752e88e879cc16, type: 3}
+  - taskTitle: 'Place Building: Workshop'
+    taskUI: {fileID: 11400000, guid: f13ebf07987210d45917b4c991c6824d, type: 2}
+    allowedFactionTypes:
+      type: 0
+      options: []
+    requiredResources:
+    - type: {fileID: 11400000, guid: ec2e59c7598c86e48a36b5c600f2f313, type: 2}
+      value:
+        amount: 200
+        capacity: 0
+      nonConsumable: 0
+    - type: {fileID: 11400000, guid: a3e40a20a0b603d4793ed1985b005aed, type: 2}
+      value:
+        amount: 200
+        capacity: 0
+      nonConsumable: 0
+    factionEntityRequirements:
+    - name: Require Barrack
+      icon: {fileID: 0}
+      codes:
+        codes:
+        - barracks_level1
+        categories: []
+      amount: 1
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    prefabObject: {fileID: 2447908893683629377, guid: c729c4d0415d1654d9ee77b32ed239b6, type: 3}
+  - taskTitle: 'Place Building: Town Center'
+    taskUI: {fileID: 11400000, guid: a29734e6a85ed1148991ef99f3f39aea, type: 2}
+    allowedFactionTypes:
+      type: 0
+      options: []
+    requiredResources:
+    - type: {fileID: 11400000, guid: ec2e59c7598c86e48a36b5c600f2f313, type: 2}
+      value:
+        amount: 300
+        capacity: 0
+      nonConsumable: 0
+    - type: {fileID: 11400000, guid: a3e40a20a0b603d4793ed1985b005aed, type: 2}
+      value:
+        amount: 200
+        capacity: 0
+      nonConsumable: 0
+    - type: {fileID: 11400000, guid: 8778529791b988549bd1465066f9a9bc, type: 2}
+      value:
+        amount: 100
+        capacity: 0
+      nonConsumable: 0
+    factionEntityRequirements:
+    - name: Require Workshop
+      icon: {fileID: 21300000, guid: 226ffb4fde6ab8a49b50f10f2d8df115, type: 3}
+      codes:
+        codes:
+        - workshop
+        categories: []
+      amount: 1
+    - name: Require Barrack Lv.2
+      icon: {fileID: 21300000, guid: 7f204d5cb77295248b751d9f36d990a9, type: 3}
+      codes:
+        codes:
+        - barracks_level2
+        categories: []
+      amount: 1
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 1, g: 1, b: 1, a: 0.5019608}
+    onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    prefabObject: {fileID: 1536897726572502, guid: 13f9d44ccafc2424295533f2d2f4db93, type: 3}
+  upgradeTargetCreationTasks: []
+  fetchConstructionAudioOnce: 0
+  constructionAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValueRange:
+        _min: 1
+        _max: 2
 --- !u!1 &5994706827345598412
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +987,10 @@ MonoBehaviour:
   _name: Dog villager
   code: dog_villager
   category: new_unit_category
-  description: new_unit_description
+  description: 'Villager of the Doggy race, This unit can collect resources and construct
+    buildings.
+
+'
   icon: {fileID: 0}
   radius: 0.7
   model: {fileID: 4329271951573201080}
@@ -616,14 +1019,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 1
-  maxHealth: 100
-  initialHealth: 100
+    y: 0
+  maxHealth: 70
+  initialHealth: 70
   canIncrease: 1
   canDecrease: 1
   hoverHealthBarData:
     enabled: 1
-    offset: {x: 0, y: -1, z: 0}
+    offset: {x: 0, y: 4, z: 0}
     size: {x: 1, y: 1, z: 1}
     parent: {fileID: 0}
   hoverHealthBarY: 4
@@ -638,7 +1041,7 @@ MonoBehaviour:
         _min: 1
         _max: 2
   destroyObject: 1
-  destroyObjectDelay: 0
+  destroyObjectDelay: 5
   destroyAward: []
   destructionAudio:
     fetchType: 0
