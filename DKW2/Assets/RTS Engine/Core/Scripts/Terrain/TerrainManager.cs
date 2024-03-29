@@ -391,7 +391,9 @@ namespace RTSEngine.Terrain
             NativeArray<RaycastHit> results = new NativeArray<RaycastHit>(1, Allocator.TempJob);
             NativeArray<RaycastCommand> commands = new NativeArray<RaycastCommand>(1, Allocator.TempJob);
 
+#pragma warning disable CS0618 // Type or member is obsolete
             commands[0] = new RaycastCommand(inPosition, Vector3.down, Mathf.Infinity, areaType.Layers);
+#pragma warning restore CS0618 // Type or member is obsolete
 
             JobHandle handle = RaycastCommand.ScheduleBatch(commands, results, minCommandsPerJob: 1, dependsOn: default(JobHandle));
             handle.Complete();

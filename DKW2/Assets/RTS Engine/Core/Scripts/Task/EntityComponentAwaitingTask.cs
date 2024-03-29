@@ -2,6 +2,7 @@
 
 using RTSEngine.UI;
 using RTSEngine.Game;
+using RTSEngine.EntityComponent;
 
 namespace RTSEngine.Task
 {
@@ -54,6 +55,9 @@ namespace RTSEngine.Task
                 Cursor.SetCursor(null, Vector3.zero, CursorMode.Auto);
 
             IsEnabled = false;
+
+            foreach (IEntityComponent entityComponent in Current.sourceTracker.EntityComponents)
+                entityComponent.Disable();
         }
 
         public Texture2D GetCursorTexture(TaskCursorData data)

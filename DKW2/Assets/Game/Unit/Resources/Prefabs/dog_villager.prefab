@@ -99,7 +99,7 @@ MonoBehaviour:
   targetRenderer:
     renderer: {fileID: 285836461298558734}
     materialID: 0
-    colorPropertyName: _Color
+    colorPropertyName: _BaseColor
     transparency: 0
     darkness: 0
   selectionRenderer: {fileID: 285836461298558734}
@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4709729657598853217}
-  - component: {fileID: 3266269497850455611}
+  - component: {fileID: 6926080335086203623}
   - component: {fileID: 3170305543877567310}
   m_Layer: 0
   m_Name: unit_movement
@@ -203,7 +203,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 429098779445884120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3266269497850455611
+--- !u!114 &6926080335086203623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,7 +220,7 @@ MonoBehaviour:
   tabID:
     x: 1
     y: 0
-  priority: 0
+  priority: -1
   requireIdleEntity: 1
   targetFinderData:
     enabled: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
       targetBuildings: 1
       targetResources: 1
     center: {fileID: 0}
-  setTargetTaskUI: {fileID: 0}
+  setTargetTaskUI: {fileID: 11400000, guid: 061c8973e3c577f4ea6c9b563d77bf00, type: 2}
   orderAudio:
     fetchType: 0
     items: []
@@ -246,31 +246,32 @@ MonoBehaviour:
         _min: 1
         _max: 2
   showTargetGizmo: 1
-  movableTerrainAreas: []
+  movableTerrainAreas:
+  - {fileID: 11400000, guid: 37d2dffab9a31a84c81d764228531ba7, type: 2}
   formation:
     lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
     type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
     properties:
       floatProperties:
       - name: spacing
-        value: 0
+        value: 0.3
       intProperties: []
   movementPriority: 0
   isMoving: 0
   isMovementPending: 0
   startPosition: {x: 0, y: 0, z: 0}
   speed:
-    value: 10
+    value: 5
   acceleration:
-    value: 20
+    value: 999
   mvtAngularSpeed:
-    value: 250
+    value: 999
   canMoveRotate: 1
   minMoveAngle: 40
   canIdleRotate: 1
   smoothIdleRotation: 1
   idleAngularSpeed:
-    value: 2
+    value: 999
   mvtAudio:
     fetchType: 0
     items: []
@@ -310,9 +311,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 316216747744195301}
+  - component: {fileID: 4911427312856707093}
   - component: {fileID: 7658448763575401107}
   - component: {fileID: 2894931300113737244}
-  - component: {fileID: 4911427312856707093}
   m_Layer: 0
   m_Name: unit_components
   m_TagString: Untagged
@@ -335,7 +336,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 429098779445884120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7658448763575401107
+--- !u!114 &4911427312856707093
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,10 +345,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5866497607023392853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b611935c044ac3479865dddaa61c62b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c1e885e8e7860a4f8cceb9aac61c68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  code: dog_villager_ResourceCollector_74
+  code: builder
   isActive: 1
   tabID:
     x: 1
@@ -368,345 +369,7 @@ MonoBehaviour:
       targetBuildings: 1
       targetResources: 1
     center: {fileID: 0}
-  setTargetTaskUI: {fileID: 0}
-  orderAudio:
-    fetchType: 0
-    items: []
-    cooldown:
-      enabled: 1
-      defaultValueRange:
-        _min: 1
-        _max: 2
-  showTargetGizmo: 1
-  progressEnabledAudio:
-    fetchType: 0
-    items: []
-    cooldown:
-      enabled: 1
-      defaultValueRange:
-        _min: 1
-        _max: 2
-  progressOverrideController:
-    fetchType: 0
-    items: []
-  progressDuration: 0.8
-  progressMaxDistance: 1
-  inProgressObject: {fileID: 0}
-  sourceEffect:
-    input: {fileID: 0}
-  targetEffect:
-    input: {fileID: 0}
-  showProgressGizmo: 1
-  collectableResources:
-  - type: {fileID: 11400000, guid: a3e40a20a0b603d4793ed1985b005aed, type: 2}
-    orderAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    amount: 1
-    animatorOverrideController:
-      fetchType: 0
-      items:
-      - {fileID: 22100000, guid: ef4ed51c5a0e131469d47e2cb999116c, type: 2}
-    enableObject: {fileID: 0}
-    enableAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    sourceEffect:
-      input: {fileID: 0}
-    targetEffect:
-      input: {fileID: 0}
-    progressAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    loopProgressAudio: 0
-  - type: {fileID: 11400000, guid: ec2e59c7598c86e48a36b5c600f2f313, type: 2}
-    orderAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    amount: 1
-    animatorOverrideController:
-      fetchType: 0
-      items:
-      - {fileID: 22100000, guid: ef4ed51c5a0e131469d47e2cb999116c, type: 2}
-    enableObject: {fileID: 0}
-    enableAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    sourceEffect:
-      input: {fileID: 0}
-    targetEffect:
-      input: {fileID: 0}
-    progressAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    loopProgressAudio: 0
-  - type: {fileID: 11400000, guid: 8778529791b988549bd1465066f9a9bc, type: 2}
-    orderAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    amount: 1
-    animatorOverrideController:
-      fetchType: 0
-      items:
-      - {fileID: 22100000, guid: ef4ed51c5a0e131469d47e2cb999116c, type: 2}
-    enableObject: {fileID: 0}
-    enableAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    sourceEffect:
-      input: {fileID: 0}
-    targetEffect:
-      input: {fileID: 0}
-    progressAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    loopProgressAudio: 0
-  onTargetResourceFullSearch: 1
-  onTargetResourceDepletedSearch: 1
---- !u!114 &2894931300113737244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5866497607023392853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 160a6844ec79b1a46bd1ada800ddf31c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  code: dog_villager_DropOffSource_81
-  isActive: 1
-  tabID:
-    x: 1
-    y: 0
-  priority: 0
-  requireIdleEntity: 1
-  targetFinderData:
-    enabled: 0
-    reloadTime: 5
-    range: 10
-    idleOnly: 1
-    typePicker:
-      type: 0
-      options:
-        codes: []
-        categories: []
-      targetUnits: 1
-      targetBuildings: 1
-      targetResources: 1
-    center: {fileID: 0}
-  setTargetTaskUI: {fileID: 0}
-  orderAudio:
-    fetchType: 0
-    items: []
-    cooldown:
-      enabled: 1
-      defaultValueRange:
-        _min: 1
-        _max: 2
-  showTargetGizmo: 1
-  targetPicker:
-    type: 0
-    options:
-      codes: []
-      categories: []
-    targetUnits: 1
-    targetBuildings: 1
-  maxDropOffDistanceEnabled: 0
-  maxDropOffDistance: 10
-  dropOffResources:
-  - type: {fileID: 11400000, guid: a3e40a20a0b603d4793ed1985b005aed, type: 2}
-    orderAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    amount: 5
-    animatorOverrideController:
-      fetchType: 0
-      items:
-      - {fileID: 22100000, guid: b143a856cabaa7d4aa502ef95cca8e0c, type: 2}
-    enableObject: {fileID: 0}
-    enableAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    sourceEffect:
-      input: {fileID: 0}
-    targetEffect:
-      input: {fileID: 0}
-    progressAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    loopProgressAudio: 0
-  - type: {fileID: 11400000, guid: ec2e59c7598c86e48a36b5c600f2f313, type: 2}
-    orderAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    amount: 5
-    animatorOverrideController:
-      fetchType: 0
-      items:
-      - {fileID: 22100000, guid: b143a856cabaa7d4aa502ef95cca8e0c, type: 2}
-    enableObject: {fileID: 0}
-    enableAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    sourceEffect:
-      input: {fileID: 0}
-    targetEffect:
-      input: {fileID: 0}
-    progressAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    loopProgressAudio: 0
-  - type: {fileID: 11400000, guid: 8778529791b988549bd1465066f9a9bc, type: 2}
-    orderAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    amount: 5
-    animatorOverrideController:
-      fetchType: 0
-      items:
-      - {fileID: 22100000, guid: b143a856cabaa7d4aa502ef95cca8e0c, type: 2}
-    enableObject: {fileID: 0}
-    enableAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    sourceEffect:
-      input: {fileID: 0}
-    targetEffect:
-      input: {fileID: 0}
-    progressAudio:
-      fetchType: 0
-      items: []
-      cooldown:
-        enabled: 0
-        defaultValueRange:
-          _min: 0
-          _max: 0
-    loopProgressAudio: 0
-  totalMaxCapacity: 30
-  dropOffOnTargetAvailable: 1
-  showDropOffPosition: 1
-  editorFoldout: 0
---- !u!114 &4911427312856707093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5866497607023392853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c1e885e8e7860a4f8cceb9aac61c68c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  code: dog_villager_Builder_157
-  isActive: 1
-  tabID:
-    x: 1
-    y: 1
-  priority: 0
-  requireIdleEntity: 1
-  targetFinderData:
-    enabled: 0
-    reloadTime: 5
-    range: 10
-    idleOnly: 1
-    typePicker:
-      type: 0
-      options:
-        codes: []
-        categories: []
-      targetUnits: 1
-      targetBuildings: 1
-      targetResources: 1
-    center: {fileID: 0}
-  setTargetTaskUI: {fileID: 0}
+  setTargetTaskUI: {fileID: 11400000, guid: fecc97456b0827948945bb64ab7b2fc5, type: 2}
   orderAudio:
     fetchType: 0
     items: []
@@ -737,7 +400,7 @@ MonoBehaviour:
     input: {fileID: 0}
   showProgressGizmo: 1
   healthPerProgress: 5
-  timeMultiplier: 0.2
+  timeMultiplier: 1
   canConstruct: 1
   constructionTargetPicker:
     type: 0
@@ -767,7 +430,7 @@ MonoBehaviour:
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
+      color: {r: 1, g: 1, b: 1, a: 0.5019608}
     onComplete:
       m_PersistentCalls:
         m_Calls: []
@@ -791,7 +454,7 @@ MonoBehaviour:
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
+      color: {r: 1, g: 1, b: 1, a: 0.5019608}
     onComplete:
       m_PersistentCalls:
         m_Calls: []
@@ -815,7 +478,7 @@ MonoBehaviour:
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
+      color: {r: 1, g: 1, b: 1, a: 0.5019608}
     onComplete:
       m_PersistentCalls:
         m_Calls: []
@@ -839,7 +502,7 @@ MonoBehaviour:
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
+      color: {r: 1, g: 1, b: 1, a: 0.5019608}
     onComplete:
       m_PersistentCalls:
         m_Calls: []
@@ -861,16 +524,16 @@ MonoBehaviour:
         capacity: 0
       nonConsumable: 0
     factionEntityRequirements:
-    - name: Require Barrack
+    - name: Require Barrack Lv.1
       icon: {fileID: 0}
       codes:
-        codes:
-        - barracks_level1
-        categories: []
+        codes: []
+        categories:
+        - barrack
       amount: 1
     missingRequirementData:
       icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
+      color: {r: 1, g: 1, b: 1, a: 0.5019608}
     onComplete:
       m_PersistentCalls:
         m_Calls: []
@@ -918,7 +581,31 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     prefabObject: {fileID: 1536897726572502, guid: 13f9d44ccafc2424295533f2d2f4db93, type: 3}
-  upgradeTargetCreationTasks: []
+  upgradeTargetCreationTasks:
+  - taskTitle: 'Task 0: barracks_level2'
+    taskUI: {fileID: 11400000, guid: 349d82fd19db2144e94bf3f16759f604, type: 2}
+    allowedFactionTypes:
+      type: 0
+      options: []
+    requiredResources:
+    - type: {fileID: 11400000, guid: ec2e59c7598c86e48a36b5c600f2f313, type: 2}
+      value:
+        amount: 200
+        capacity: 0
+      nonConsumable: 0
+    - type: {fileID: 11400000, guid: a3e40a20a0b603d4793ed1985b005aed, type: 2}
+      value:
+        amount: 200
+        capacity: 0
+      nonConsumable: 0
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 1, g: 0.29803923, b: 0.29803923, a: 1}
+    onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    prefabObject: {fileID: 6813796212561143312, guid: fec93b6a49601c64696abab5882edc3d, type: 3}
   fetchConstructionAudioOnce: 0
   constructionAudio:
     fetchType: 0
@@ -928,6 +615,341 @@ MonoBehaviour:
       defaultValueRange:
         _min: 1
         _max: 2
+--- !u!114 &7658448763575401107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5866497607023392853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b611935c044ac3479865dddaa61c62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: resource_collector
+  isActive: 1
+  tabID:
+    x: 1
+    y: 1
+  priority: 5
+  requireIdleEntity: 1
+  targetFinderData:
+    enabled: 1
+    reloadTime: 1
+    range: 20
+    idleOnly: 1
+    typePicker:
+      type: 0
+      options:
+        codes: []
+        categories: []
+      targetUnits: 1
+      targetBuildings: 1
+      targetResources: 1
+    center: {fileID: 0}
+  setTargetTaskUI: {fileID: 11400000, guid: 4cdd4057e4567bf4da27ecfda0269d22, type: 2}
+  orderAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValueRange:
+        _min: 1
+        _max: 2
+  showTargetGizmo: 1
+  progressEnabledAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValueRange:
+        _min: 1
+        _max: 2
+  progressOverrideController:
+    fetchType: 0
+    items: []
+  progressDuration: 0.8
+  progressMaxDistance: 0.2
+  inProgressObject: {fileID: 0}
+  sourceEffect:
+    input: {fileID: 0}
+  targetEffect:
+    input: {fileID: 0}
+  showProgressGizmo: 1
+  collectableResources:
+  - type: {fileID: 11400000, guid: a3e40a20a0b603d4793ed1985b005aed, type: 2}
+    orderAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    amount: 1
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: 820bb69a8bc2fd44aa9acf929898005b, type: 2}
+    enableObject: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+    progressAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    loopProgressAudio: 0
+  - type: {fileID: 11400000, guid: ec2e59c7598c86e48a36b5c600f2f313, type: 2}
+    orderAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    amount: 1
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: 820bb69a8bc2fd44aa9acf929898005b, type: 2}
+    enableObject: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+    progressAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    loopProgressAudio: 0
+  - type: {fileID: 11400000, guid: 8778529791b988549bd1465066f9a9bc, type: 2}
+    orderAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    amount: 1
+    animatorOverrideController:
+      fetchType: 0
+      items:
+      - {fileID: 22100000, guid: 820bb69a8bc2fd44aa9acf929898005b, type: 2}
+    enableObject: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+    progressAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    loopProgressAudio: 0
+  onTargetResourceFullSearch: 1
+  onTargetResourceDepletedSearch: 1
+--- !u!114 &2894931300113737244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5866497607023392853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160a6844ec79b1a46bd1ada800ddf31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: dropoff
+  isActive: 1
+  tabID:
+    x: 1
+    y: 0
+  priority: 2
+  requireIdleEntity: 1
+  targetFinderData:
+    enabled: 0
+    reloadTime: 5
+    range: 10
+    idleOnly: 1
+    typePicker:
+      type: 0
+      options:
+        codes: []
+        categories: []
+      targetUnits: 1
+      targetBuildings: 1
+      targetResources: 1
+    center: {fileID: 0}
+  setTargetTaskUI: {fileID: 0}
+  orderAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValueRange:
+        _min: 1
+        _max: 2
+  showTargetGizmo: 1
+  targetPicker:
+    type: 0
+    options:
+      codes: []
+      categories: []
+    targetUnits: 1
+    targetBuildings: 1
+  maxDropOffDistanceEnabled: 0
+  maxDropOffDistance: 10
+  dropOffResources:
+  - type: {fileID: 11400000, guid: a3e40a20a0b603d4793ed1985b005aed, type: 2}
+    orderAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    amount: 10
+    animatorOverrideController:
+      fetchType: 0
+      items: []
+    enableObject: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+    progressAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    loopProgressAudio: 0
+  - type: {fileID: 11400000, guid: ec2e59c7598c86e48a36b5c600f2f313, type: 2}
+    orderAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    amount: 10
+    animatorOverrideController:
+      fetchType: 0
+      items: []
+    enableObject: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+    progressAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    loopProgressAudio: 0
+  - type: {fileID: 11400000, guid: 8778529791b988549bd1465066f9a9bc, type: 2}
+    orderAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    amount: 5
+    animatorOverrideController:
+      fetchType: 0
+      items: []
+    enableObject: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+    progressAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValueRange:
+          _min: 0
+          _max: 0
+    loopProgressAudio: 0
+  totalMaxCapacity: 30
+  dropOffOnTargetAvailable: 1
+  showDropOffPosition: 1
+  editorFoldout: 0
 --- !u!1 &5994706827345598412
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,7 +964,7 @@ GameObject:
   - component: {fileID: 1641157800166812355}
   - component: {fileID: 7341435298582874762}
   - component: {fileID: 2511218336251110030}
-  - component: {fileID: 3631265837456253736}
+  - component: {fileID: 2611132637367548143}
   m_Layer: 0
   m_Name: dog_villager
   m_TagString: Untagged
@@ -986,19 +1008,29 @@ MonoBehaviour:
     y: 0
   _name: Dog villager
   code: dog_villager
-  category: new_unit_category
+  category: dog,villager
   description: 'Villager of the Doggy race, This unit can collect resources and construct
     buildings.
 
 '
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: aa1501f8b542caa4ead6e3f8383318e8, type: 3}
   radius: 0.7
   model: {fileID: 4329271951573201080}
   isIdle: 0
   isMainEntity: 0
   isFactionLocked: 0
-  initResources: []
-  disableResources: []
+  initResources:
+  - type: {fileID: 11400000, guid: b16294d219bf6db449279be57eae3702, type: 2}
+    value:
+      amount: 1
+      capacity: 0
+    nonConsumable: 0
+  disableResources:
+  - type: {fileID: 11400000, guid: b16294d219bf6db449279be57eae3702, type: 2}
+    value:
+      amount: -1
+      capacity: 0
+    nonConsumable: 0
   coloredRenderers:
   - renderer: {fileID: 0}
     materialID: 0
@@ -1026,7 +1058,7 @@ MonoBehaviour:
   canDecrease: 1
   hoverHealthBarData:
     enabled: 1
-    offset: {x: 0, y: 4, z: 0}
+    offset: {x: 0, y: 1.5, z: 0}
     size: {x: 1, y: 1, z: 1}
     parent: {fileID: 0}
   hoverHealthBarY: 4
@@ -1083,8 +1115,8 @@ MonoBehaviour:
   animatorOverrideController:
     fetchType: 0
     items:
-    - {fileID: 22100000, guid: 5ad41bbe904c6e94993bd6e4d100c41a, type: 2}
-  damageAnimationEnabled: 1
+    - {fileID: 22100000, guid: 820bb69a8bc2fd44aa9acf929898005b, type: 2}
+  damageAnimationEnabled: 0
   damageAnimationDuration: 0.2
 --- !u!82 &7341435298582874762
 AudioSource:
@@ -1204,7 +1236,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 7
   m_ObstacleAvoidanceType: 0
---- !u!114 &3631265837456253736
+--- !u!114 &2611132637367548143
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1213,15 +1245,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5994706827345598412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab46bb0053502243877f36416be80ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 748ac62cda31faa47aad0d5331639715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coloredRenderers:
-  - renderer: {fileID: 0}
-    materialID: 0
-    colorPropertyName: _Color
-    transparency: 0
-    darkness: 0
+  code: tasks_queue
+  isActive: 1
+  keepActiveTask: 1
+  excludeResourceCollectionInKeepActiveTask: 1
 --- !u!1 &6466933446269732255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,7 +1304,8 @@ MonoBehaviour:
   selectOwnerOnly: 0
   selectionAudio:
     fetchType: 0
-    items: []
+    items:
+    - {fileID: 8300000, guid: 7d5bc7c59af0c6e4ab735297fa5736ac, type: 3}
     cooldown:
       enabled: 1
       defaultValueRange:
@@ -1289,9 +1320,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 429098779445884120}
     m_Modifications:
     - target: {fileID: 8530477259685642075, guid: 1d2465e625f23fd4594038dc128f9bc9, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530477259685642075, guid: 1d2465e625f23fd4594038dc128f9bc9, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 5ad41bbe904c6e94993bd6e4d100c41a, type: 2}
+      objectReference: {fileID: 22100000, guid: 820bb69a8bc2fd44aa9acf929898005b, type: 2}
+    - target: {fileID: 8530477259685642075, guid: 1d2465e625f23fd4594038dc128f9bc9, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8530477259692888253, guid: 1d2465e625f23fd4594038dc128f9bc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

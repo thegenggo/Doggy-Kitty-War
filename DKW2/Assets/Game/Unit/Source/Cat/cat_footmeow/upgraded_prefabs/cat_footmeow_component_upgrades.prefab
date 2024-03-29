@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1403696347375419850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 575813101427797297}
+  - component: {fileID: 7391090099578452306}
+  - component: {fileID: -5606075826512702755}
+  m_Layer: 0
+  m_Name: cat_footmeow_component_upgrades
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &575813101427797297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403696347375419850}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7391090099578452306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403696347375419850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb473185f7938924abba8a2dce086127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceEntity: {fileID: 8755700070187320934, guid: 52346f9b8b1ac904dae8bb571a670b5e, type: 3}
+  sourceInstanceOnly: 0
+  updateSpawnedInstances: 1
+  upgradeEffect:
+    input: {fileID: 0}
+  upgrades:
+  - sourceComponentCode: attack
+    upgradeTarget: {fileID: 5092172396975771561, guid: d5067fdc238b5674ba2b627719b46c8a, type: 3}
+    triggerUpgrades:
+    - upgradeComp: {fileID: -5606075826512702755}
+      upgradeIndex: 0
+--- !u!114 &-5606075826512702755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403696347375419850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb473185f7938924abba8a2dce086127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceEntity: {fileID: 8755700070187320934, guid: 3dbb1dd42696e754595266bbbe1cab8e, type: 3}
+  sourceInstanceOnly: 0
+  updateSpawnedInstances: 1
+  upgradeEffect:
+    input: {fileID: 0}
+  upgrades:
+  - sourceComponentCode: attack
+    upgradeTarget: {fileID: 5092172396975771561, guid: d5067fdc238b5674ba2b627719b46c8a, type: 3}
+    triggerUpgrades: []

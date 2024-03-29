@@ -151,5 +151,6 @@
         lobbyMaxSlotsUnsatisfied,
         lobbyHostOnly,
         lobbyPlayersNotAllReady,
+        lobbyFactionTypesNotUnique
     }
 }

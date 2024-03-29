@@ -52,6 +52,8 @@ namespace RTSEngine.Selection
             rigidbody.useGravity = false;
         }
 
+        public IEntity GetEntity() => Entity;
+
         public void Disable() { }
         #endregion
 

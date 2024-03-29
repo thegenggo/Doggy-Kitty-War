@@ -84,8 +84,8 @@ MonoBehaviour:
   tabID:
     x: 0
     y: 0
-  maxHealth: 100
-  initialHealth: 100
+  maxHealth: 1000
+  initialHealth: 1000
   canIncrease: 1
   canDecrease: 1
   hoverHealthBarData:
@@ -286,6 +286,7 @@ MonoBehaviour:
     y: 0
   code: resource_worker_manager
   workerPositions:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   forcedTerrainAreas: []

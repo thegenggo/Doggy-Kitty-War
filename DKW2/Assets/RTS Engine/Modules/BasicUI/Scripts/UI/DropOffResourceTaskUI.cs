@@ -52,6 +52,12 @@ namespace RTSEngine.UI
         {
             int amount = Attributes.dropOffSource.CollectedResources[Attributes.resourceType];
             int maxAmount = Attributes.dropOffSource.GetMaxCapacity(Attributes.resourceType);
+            if (maxAmount == 0)
+            {
+                Disable();
+                return;
+            }
+
             amountTextUI.text = $"{amount}/{maxAmount}";
 
             image.color = amount >= maxAmount 

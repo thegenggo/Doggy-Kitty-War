@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/RTS Engine/Modules/Multiplayer/Mirror/Scenes/MultiplayerHeadlessServerStarter_Mirror.unity
+    guid: aeb39adb138019f448c2b23638c5f41b
   - enabled: 1
     path: Assets/Game/Scenes/MainMenu.unity
     guid: a107b252557a24843a0aa938f27d7836

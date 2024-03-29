@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   code: light_infantry_basic_attack
-  isActive: 1
+  isActive: 0
   tabID:
     x: 0
     y: 0
@@ -134,8 +134,10 @@ MonoBehaviour:
   damage:
     enabled: 1
     data:
-      unit: 13
-      building: 13
+      unitMin: 10
+      unitMax: 10
+      buildingMin: 10
+      buildingMax: 10
       custom: []
     areaAttackEnabled: 0
     areaAttackData: []
@@ -291,6 +293,7 @@ GameObject:
   - component: {fileID: 7582849089770859910}
   - component: {fileID: 7686239489646723646}
   - component: {fileID: 6733183489487592841}
+  - component: {fileID: 6541322324560204738}
   m_Layer: 0
   m_Name: orc
   m_TagString: Untagged
@@ -590,6 +593,27 @@ MonoBehaviour:
     colorPropertyName: _Color
     transparency: 0
     darkness: 0
+--- !u!65 &6541322324560204738
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7501055689196940650}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.73091984, y: 0.76142085, z: 0.38}
+  m_Center: {x: 0.01224041, y: 0.3792209, z: 0}
 --- !u!1 &7501175084258782510
 GameObject:
   m_ObjectHideFlags: 0

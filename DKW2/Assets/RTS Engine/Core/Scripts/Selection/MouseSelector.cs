@@ -51,15 +51,37 @@ namespace RTSEngine.Selection
             if (mainCameraController.RotationHandler.IsRotating)
                 return;
 
+            bool raycastSuccess = raycast.Hit(mainCameraController.ScreenPointToRay(Input.mousePosition), out RaycastHit hit);
+
             bool leftButtonDown = Input.GetMouseButtonUp(0);
             bool rightButtonDown = Input.GetMouseButtonUp(1);
+
+
+            if (raycastSuccess)
+            {
+                if (taskMgr.AwaitingTask.IsEnabled && taskMgr.AwaitingTask.Current.sourceTracker.EntityComponents[0].GetType() == typeof(UnitSkill))
+                {
+                    UnitSkill unitSkill = taskMgr.AwaitingTask.Current.sourceTracker.EntityComponents[0] as UnitSkill;
+                    unitSkill.SkillCanvasUpdate(taskMgr.AwaitingTask.Current, hit.point);
+                    if (leftButtonDown)
+                    {
+                        unitSkill.OnAwaitingTaskTargetSet(taskMgr.AwaitingTask.Current, hit.point);
+                        taskMgr.AwaitingTask.Disable();
+                    }
+                    else if (rightButtonDown)
+                    {
+                        taskMgr.AwaitingTask.Disable();
+                    }
+                    return;
+                }
+            }
 
             // If the mouse pointer is over a UI element or the minimap, we will not detect entity selection
             // In addition, we make sure that one of the mouse buttons are down
             if (!leftButtonDown && !rightButtonDown)
                 return;
 
-            if (raycast.Hit(mainCameraController.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
+            if (raycastSuccess)
             {
                 // Get the entity that the player clicked in or see if the player clicked on a terrain area.
                 IEntity hitEntity = hit.transform.gameObject.GetComponent<EntitySelectionCollider>()?.Entity;
@@ -89,12 +111,12 @@ namespace RTSEngine.Selection
                 {
                     if (!hitEntity.IsValid())
                     {
-                        // Complete awaiting task on terrain click.
                         if (hitTerrain && taskMgr.AwaitingTask.IsEnabled)
                         {
                             var entityTargetComps = taskMgr.AwaitingTask.Current.sourceTracker.EntityTargetComponents;
-                            if (entityTargetComps[0] is IMovementComponent
-                                || entityTargetComps[0] is IAttackComponent)
+                            
+                            if (entityTargetComps.Count != 0 && (entityTargetComps[0] is IMovementComponent
+                                || entityTargetComps[0] is IAttackComponent))
                             {
                                 taskMgr.AwaitingTask.Current.sourceTracker.Entities
                                     .SetTargetFirstMany(new SetTargetInputData
@@ -117,6 +139,7 @@ namespace RTSEngine.Selection
                         taskMgr.AwaitingTask.Disable();
                         return;
                     }
+     
 
                     // Awaiting task is active with a valid hit entity
                     if (taskMgr.AwaitingTask.IsEnabled)

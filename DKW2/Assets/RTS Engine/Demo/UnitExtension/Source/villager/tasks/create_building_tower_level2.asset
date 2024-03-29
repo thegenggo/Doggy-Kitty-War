@@ -21,9 +21,11 @@ MonoBehaviour:
     forceSlot: 1
     slotIndex: 3
     tooltipEnabled: 1
-    description: Create Tower 2.
+    description: Create Turret.
     hideTooltipOnClick: 1
     reloadTime: 0
     cursor:
       icon: {fileID: 0}
+      texture: {fileID: 0}
       hotspot: {x: 0, y: 0}
+    controlType: {fileID: 0}

@@ -475,7 +475,7 @@ namespace RTSEngine.Search
 
             // Using a sorted list allows to sort potential targets depending on their distance from the search source position
             findLists.currTargetsList.Clear();
-
+          
             CachedSearchSource cachedSearchSource = new CachedSearchSource
             {
                 entityType = typeof(T),
@@ -532,7 +532,7 @@ namespace RTSEngine.Search
             findLists.alreadySearchedCells.Add(sourceCell);
 
             // As long as there cells to search
-            while(findLists.currentSearchCells.Count > 0)
+            while (findLists.currentSearchCells.Count > 0)
             {
                 // Holds te neighbor cells of the current cells to search so they would be searched in the next round.
                 findLists.nextSearchCells.Clear();
@@ -590,7 +590,7 @@ namespace RTSEngine.Search
 
                 findLists.currTargetsList.Sort((elem1, elem2) => (elem1.Key.CompareTo(elem2.Key)));
 
-                if(cacheSearchResults && findClosest && !cachedSearches.ContainsKey(cachedSearchSource))
+                if (cacheSearchResults && findClosest && !cachedSearches.ContainsKey(cachedSearchSource))
                     cachedSearches.Add(
                         cachedSearchSource,
                         new CachedSearchResult

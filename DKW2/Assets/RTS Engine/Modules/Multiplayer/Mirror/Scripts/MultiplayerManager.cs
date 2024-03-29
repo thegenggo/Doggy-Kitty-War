@@ -23,6 +23,7 @@ using RTSEngine.Multiplayer.Logging;
 using RTSEngine.Scene;
 using RTSEngine.Multiplayer.UI;
 using System.Net.Sockets;
+using RTSEngine.Multiplayer.Mirror.Lobby;
 
 namespace RTSEngine.Multiplayer.Mirror
 {
@@ -422,7 +423,16 @@ namespace RTSEngine.Multiplayer.Mirror
 
         public ErrorMessage CanStartLobby ()
         {
-            if (!this.CurrentLobby.IsValid())
+            List<string> factionNames = new List<string>();
+            foreach(var i in roomSlots)
+            {
+                MultiplayerLobbyFactionSlot slot = i as MultiplayerLobbyFactionSlot;
+                Debug.Log(slot.Data.type.name);
+                factionNames.Add(slot.Data.type.name);
+            }
+            if (factionNames.Count() != factionNames.Distinct().Count())
+                return ErrorMessage.lobbyFactionTypesNotUnique;
+            else if (!this.CurrentLobby.IsValid())
                 return ErrorMessage.invalid;
             else if (this.CurrentLobby.CurrentMap.factionsAmount.min > this.CurrentLobby.FactionSlotCount)
                 return ErrorMessage.lobbyMinSlotsUnsatisfied;

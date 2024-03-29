@@ -29,10 +29,10 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.00000052825493}
   m_LocalScale: {x: 1.0000027, y: 1.000003, z: 1.0000029}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4511406456031189257}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -60,14 +60,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   code: minimap_attack_notification
+  tabID:
+    x: 0
+    y: 0
   enableLifeTime: 1
   defaultLifeTime: 1
   disableTime: 0
   spawnPositionOffset: {x: 0, y: 0, z: 0}
+  offsetLocalPosition: 0
+  initEvent:
+    m_PersistentCalls:
+      m_Calls: []
   enableEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 729823581639970833}
+        m_TargetAssemblyTypeName: 
         m_MethodName: EnableFlash
         m_Mode: 1
         m_Arguments:
@@ -82,6 +90,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 729823581639970833}
+        m_TargetAssemblyTypeName: 
         m_MethodName: DisableFlash
         m_Mode: 1
         m_Arguments:
@@ -92,6 +101,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  deactivateEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &729823581639970833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,9 +146,9 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00000052825345}
   m_LocalScale: {x: 0.9999973, y: 0.9999971, z: 0.9999972}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3472132083749930782}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -166,6 +178,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

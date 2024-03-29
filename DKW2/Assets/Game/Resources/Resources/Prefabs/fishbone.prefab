@@ -117,6 +117,7 @@ MonoBehaviour:
   workerPositions:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   forcedTerrainAreas: []
   defineMaxAmount: 0
   maxWorkerAmount: 4
@@ -445,8 +446,8 @@ MonoBehaviour:
   tabID:
     x: 0
     y: 0
-  maxHealth: 100
-  initialHealth: 100
+  maxHealth: 1000
+  initialHealth: 1000
   canIncrease: 1
   canDecrease: 1
   hoverHealthBarData:

@@ -85,8 +85,8 @@ namespace RTSEngine.Audio
                 PlayMusic();
 
             //set initial volume
-            UpdateSFXVolume(SFXVolume);
-            UpdateMusicVolume(musicVolume);
+            //UpdateSFXVolume(SFXVolume);
+            //UpdateMusicVolume(musicVolume);
 
             sfxClipSourceTransforms = new Dictionary<AudioClip, List<AudioSource>>();
             sfxSourceActiveClips = new Dictionary<AudioSource, AudioClip>();
@@ -237,6 +237,12 @@ namespace RTSEngine.Audio
         {
             globalSFXAudioSource.Stop();
         }
+
+        public void SetSFXVolume(float volume)
+        {
+            UpdateSFXVolume(volume);
+            SFXVolumeSlider.value = volume;
+        }
         #endregion
 
         #region Music Loops
@@ -336,6 +342,12 @@ namespace RTSEngine.Audio
             StopMusic();
             nextMusicFetchType = MusicNextFetchType.next;
             PlayMusic();
+        }
+
+        public void SetMusicVolume(float volume)
+        {
+            UpdateMusicVolume(volume);
+            musicVolumeSlider.value = volume;
         }
         #endregion
 

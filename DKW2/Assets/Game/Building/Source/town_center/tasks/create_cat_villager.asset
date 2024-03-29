@@ -23,7 +23,7 @@ MonoBehaviour:
     tooltipEnabled: 1
     description: Create Villager.
     hideTooltipOnClick: 0
-    reloadTime: 3
+    reloadTime: 5
     cursor:
       icon: {fileID: 0}
       texture: {fileID: 0}

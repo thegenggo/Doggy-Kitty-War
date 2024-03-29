@@ -118,6 +118,8 @@ namespace RTSEngine.Attack
                 playerCommand: true, 
                 out IReadOnlyList<IFactionEntity> targetsInRange);
 
+            Debug.Log("Targets in range: " + targetsInRange.Count);
+
             for (int i = 0; i < targetsInRange.Count; i++)
             {
                 IFactionEntity target = targetsInRange[i];

@@ -321,14 +321,16 @@ namespace RTSEngine.UI
                 {
                     foreach(var elem in dropOffComp.CollectedResources)
                     {
-                        if(dropOffResourceTasks.TryGetValue(elem.Key, out DropOffResourceTaskUI resourceTaskUI))
+                        if(dropOffResourceTasks.TryGetValue(elem.Key, out DropOffResourceTaskUI resourceTaskUI) )
                         {
+                            
                             resourceTaskUI.Reload(new DropOffResourceTaskUIAttributes
                             {
                                 dropOffSource = dropOffComp,
                                 resourceType = elem.Key,
                                 maxCapacityColor = dropOffResourcePanel.maxCapacityColor
                             }) ;
+                            
                         }
                     }
                 }

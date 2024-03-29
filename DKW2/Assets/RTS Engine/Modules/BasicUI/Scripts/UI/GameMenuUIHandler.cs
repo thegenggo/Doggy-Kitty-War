@@ -29,6 +29,9 @@ namespace RTSEngine.UI
         [SerializeField, Tooltip("A sub-panel in the pause menu that allows the player to confirm whether they are leaving the game or not. If assigned, enabled when the above button is clicked. Otherwise, the above button takes the player directly to the main menu.")]
         private GameObject mainMenuConfirmPanel;
 
+        [Space(), SerializeField, Tooltip("Shown when the local player need to learn how to controls the game.")]
+        private GameObject controlsMenu = null;
+
         // Game services
         protected IGameManager gameMgr { private set; get; } 
         protected IGlobalEventPublisher globalEvent { private set; get; }
@@ -101,6 +104,20 @@ namespace RTSEngine.UI
         {
             if (controls.GetDown(pauseKey))
                 TogglePauseMenu();
+        }
+        #endregion
+
+        #region Handling Controls Menu
+        public void ToggleControlsMenu()
+        {
+            if(controlsMenu.activeSelf)
+            {
+                controlsMenu.SetActive(false);
+            }
+            else
+            {
+                controlsMenu.SetActive(true);
+            }
         }
         #endregion
 

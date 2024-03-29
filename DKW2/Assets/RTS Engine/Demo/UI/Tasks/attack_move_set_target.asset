@@ -16,14 +16,16 @@ MonoBehaviour:
     code: attack_move_set_target
     enabled: 1
     displayType: 2
-    icon: {fileID: 21300000, guid: 646a9231d1e6e65429c62074a8b0f3df, type: 3}
+    icon: {fileID: 21300000, guid: 77e1083102e229b4fa967a8f4055dc3f, type: 3}
     panelCategory: 3
     forceSlot: 1
     slotIndex: 5
     tooltipEnabled: 1
     description: tooltip text
     hideTooltipOnClick: 1
-    reloadTime: 0.1
+    reloadTime: 0
     cursor:
-      icon: {fileID: 21300000, guid: 646a9231d1e6e65429c62074a8b0f3df, type: 3}
+      icon: {fileID: 21300000, guid: 77e1083102e229b4fa967a8f4055dc3f, type: 3}
+      texture: {fileID: 0}
       hotspot: {x: 0, y: 0}
+    controlType: {fileID: 0}

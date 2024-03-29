@@ -270,8 +270,8 @@ namespace RTSEngine.EntityComponent
 
         public override ErrorMessage IsTargetValid(SetTargetInputData data)
         {
-            if (IsCooldownActive)
-                return ErrorMessage.attackTypeInCooldown;
+            //if (IsCooldownActive)
+            //    return ErrorMessage.attackTypeInCooldown;
 
             TargetData<IFactionEntity> potentialTarget = data.target;
 

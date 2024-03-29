@@ -45,6 +45,8 @@ namespace RTSEngine.Audio
             this.timeModifier.ModifierUpdated += HandleTimeModifierUpdated;
 
             globalEvent.GameStateUpdatedGlobal += HandleGameStateUpdated;
+
+            LoadSetting();
         }
 
         protected override void OnDisabled()
@@ -67,6 +69,7 @@ namespace RTSEngine.Audio
                 StopMusic();
         }
         #endregion
+
         #region Handling Events: Time Modifier
         private void HandleTimeModifierUpdated(ITimeModifier timeModifier, EventArgs args)
         {
@@ -121,6 +124,7 @@ namespace RTSEngine.Audio
         {
             foreach (AudioSource source in localAudioSources)
                 source.volume = Data.SFXVolume;
+            SaveSetting();
         }
         #endregion
 
@@ -130,6 +134,24 @@ namespace RTSEngine.Audio
 
         public void PlaySFX(IEntity entity, AudioClipFetcher fetcher, bool loop = false) =>
             PlaySFX(entity.AudioSourceComponent, fetcher.Fetch(), loop);
+        #endregion
+
+        #region Save/Load Setting
+        public void SaveSetting()
+        {
+            SaveSystem.SaveAudioSetting(this);
+        }
+
+        public void LoadSetting()
+        {
+            GameAudioManagerData data = SaveSystem.LoadAudioSetting();
+
+            if (data != null)
+            {
+                SetMusicVolume(data.audioData.musicVolume);
+                SetSFXVolume(data.audioData.SFXVolume);
+            }
+        }
         #endregion
     }
 }

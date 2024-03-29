@@ -492,7 +492,7 @@ namespace RTSEngine.Multiplayer.Mirror.Lobby
 
             List<string> factionTypeOptions = lobbyMgr.CurrentMap.GetFactionTypes().Select(type => type.Name).ToList();
             // Last faction type option in the list is the random one
-            factionTypeOptions.Add(RandomFactionTypeName);
+            //factionTypeOptions.Add(RandomFactionTypeName);
 
             if (inputData.isFactionTypeRandom)
             {
@@ -521,7 +521,6 @@ namespace RTSEngine.Multiplayer.Mirror.Lobby
             inputData.prevFactionTypeID = inputData.factionTypeID;
 
             inputData.factionTypeID = factionTypeMenu.value;
-            inputData.isFactionTypeRandom = factionTypeMenu.value == factionTypeMenu.options.Count - 1;
 
             TryUpdateInputData(inputData);
         }
@@ -529,9 +528,7 @@ namespace RTSEngine.Multiplayer.Mirror.Lobby
         private void UpdateFactionTypeMenuValue()
         {
             // Last faction type option in the list is the random one
-            factionTypeMenu.value = inputData.isFactionTypeRandom
-                ? factionTypeMenu.options.Count - 1
-                : inputData.factionTypeID;
+            factionTypeMenu.value = inputData.factionTypeID;
         }
         #endregion
 
@@ -610,6 +607,19 @@ namespace RTSEngine.Multiplayer.Mirror.Lobby
         public override void ReadyStateChanged(bool _, bool newReadyState)
         {
             readyImage.gameObject.SetActive(newReadyState);
+            if(newReadyState)
+            {
+
+                factionNameInput.interactable = false;
+                factionTypeMenu.interactable = false;
+                factionColorImage.raycastTarget = false;
+            }
+            else
+            {
+                factionNameInput.interactable = true;
+                factionTypeMenu.interactable = true;
+                factionColorImage.raycastTarget = true;
+            }
         }
         #endregion
 

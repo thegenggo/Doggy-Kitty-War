@@ -16,7 +16,7 @@ namespace RTSEngine.Selection
 
         public bool IsLocked { set; get; }
         [SerializeField, Tooltip("Renderer used to display the selection texture of an entity.")]
-        private ColoredRenderer targetRenderer = new ColoredRenderer { colorPropertyName = "_Color", materialID = 0 };
+        private ColoredRenderer targetRenderer = new ColoredRenderer { colorPropertyName = "_BaseColor", materialID = 0 };
 
         // REMOVE ME IN V > 2023.0.3
         [SerializeField]

@@ -89,7 +89,7 @@ namespace RTSEngine.EntityComponent
             // This movement source is neither the start of a new attack-move command nor it is part of an exisitng one
             if (!IsAttackMoveEnabled
                 || (!args.Source.inMoveAttackChain && !args.Source.isMoveAttackRequest))
-            { 
+            {
                 // disable attack move in case it was enabled before
                 DisableAttackMove();
                 return;
@@ -123,6 +123,7 @@ namespace RTSEngine.EntityComponent
             lastAttackMoveTarget = unit.MovementComponent.Target;
 
             // Disable idle only target search so that the attack unit can move and search for potential attack targets.
+            if (targetFinder != null)
             targetFinder.IdleOnly = false;
 
             IsAttackMoveActive = true;
@@ -409,6 +410,7 @@ namespace RTSEngine.EntityComponent
 
         public override bool OnTaskUIClick(EntityComponentTaskUIAttributes taskAttributes)
         {
+            Debug.Log("OnTaskUIClick" + taskAttributes.sourceTracker.EntityTargetComponents[0]);
             if (base.OnTaskUIClick(taskAttributes))
                 return true;
 
